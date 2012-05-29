@@ -1,0 +1,32 @@
+{
+  "name": "plest",
+  "title": "Plest",
+  "description": "plest project",
+  "version": "0.1.0",
+  "homepage": "https://github.com/yuuganisakase/plest",
+  "author": {
+    "name": "oka",
+    "email": "yuuganisakase@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuuganisakase/plest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuuganisakase/plest/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/yuuganisakase/plest/blob/master/LICENSE-MIT"
+    },
+    {
+      "type": "GPL",
+      "url": "https://github.com/yuuganisakase/plest/blob/master/LICENSE-GPL"
+    }
+  ],
+  "dependencies": {
+    "jquery": "~1.5"
+  },
+  "keywords": []
+}

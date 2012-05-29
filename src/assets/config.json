@@ -1,0 +1,14 @@
+{
+	"FBaction": {
+		"actionedMessage": "人がいいね！と言っています。",
+		"action1": "いいね！",
+		"action2": "コメントする",
+		"action3": "シェア"
+	},
+	"TWaction":{
+		"actionedMessage": "人がお気に入り登録しました。",
+		"action1":"返信",
+		"action2":"リツイート",
+		"action3":"お気に入り登録"
+	}
+}

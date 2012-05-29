@@ -1,0 +1,205 @@
+body {
+  font-size: 13px;
+  background-image: url("../img/backgroundTile.png");
+  background-repeat: repeat;
+  font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+#header {
+  height: 67px;
+  width: 100%;
+  position: relative;
+}
+#header #logo {
+  left: 2px;
+  top: 17px;
+  position: absolute;
+}
+#header #setting {
+  right: 0;
+  position: absolute;
+}
+#message {
+  margin-bottom: 17px;
+}
+#container {
+  width: 960px;
+  border: solid 1px rgba(0,0,0,0);
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  height: 100%;
+}
+#container #feed {
+  height: 100%;
+}
+#container #plestLine {
+  margin-left: 24px;
+  position: absolute;
+  height: 100%;
+  border-left: 2px solid rgba(100,100,100,0.3);
+  border-right: 2px solid rgba(255,255,255,0.5);
+  width: 0;
+}
+.mainColor {
+  color: #00a49f;
+}
+.item {
+  margin-bottom: 8px;
+}
+div.mainItem {
+  float: left;
+}
+div.mainItem .plestValue {
+  width: 58px;
+  float: left;
+  position: relative;
+}
+div.mainItem .plestBack {
+  width: 50px;
+  height: 50px;
+  background: #00cdc0;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  border: solid 1px #00a49f;
+  -webkit-box-shadow: 1px 1px 1px #00a49f, -1px -1px 1px #00a49f;
+  box-shadow: 1px 1px 1px #00a49f, -1px -1px 1px #00a49f;
+}
+div.mainItem .plestNumber {
+  position: absolute;
+  left: 15px;
+  top: 17px;
+  color: #fff;
+}
+div.mainItem .mainItemBox {
+  float: left;
+  width: 525px;
+  -webkit-box-shadow: 1px 1px 1px #cfcfcf, -1px -1px 1px #cfcfcf;
+  box-shadow: 1px 1px 1px #cfcfcf, -1px -1px 1px #cfcfcf;
+  border-top: solid 1px #cfcfcf;
+  border-bottom: solid 1px #cfcfcf;
+  border-right: solid 1px #cfcfcf;
+  border-left: none;
+  background-color: #fff;
+}
+div.mainItem .mainItemBox .snsImg {
+  position: absolute;
+}
+div.mainItem .mainItemBox .snsIcon {
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-top: 14px;
+  margin-left: 45px;
+}
+div.mainItem .mainItemBox .mainItemInner {
+  float: left;
+  margin-top: 14px;
+  margin-left: 16px;
+}
+div.mainItem .mainItemBox .mainItemInner .name {
+  color: #00a49f;
+  font-family: 'ヒラギノ角ゴ Pro W6', "HiraKakuPro-W6", 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-size: 108%;
+}
+div.mainItem .mainItemBox .mainItemInner .time {
+  color: #ccc;
+  font-size: 93%;
+}
+div.mainItem .mainItemBox .mainItemInner .postTexts {
+  margin-top: 12px;
+  width: 410px;
+}
+div.mainItem .mainItemBox .mainItemInner .posImg {
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+.recommendItem:after,
+.recommendItem:before {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.recommendItem:after {
+  border-right-color: rgba(128,128,128,0.25);
+  top: 26px;
+  border-top: 10px solid transparent;
+  border-right: 16px solid rgba(128,128,128,0.25);
+  border-bottom: 10px solid transparent;
+}
+.recommendItem {
+  position: relative;
+  float: left;
+  width: 354px;
+  margin-left: 19px;
+  border-top: solid 1px #cfcfcf;
+  border-bottom: solid 1px #cfcfcf;
+  border-right: solid 1px #cfcfcf;
+  border-left: none;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  background-color: rgba(128,128,128,0.25);
+  font-size: 85%;
+}
+.recommendItem .commentBoxWrapper {
+  margin-top: 10px;
+}
+.recommendItem .commentBoxWrapper .commentImgIcon {
+  margin-left: 8px;
+  float: left;
+}
+.recommendItem .commentBoxWrapper hr.commentLine {
+  width: 323px;
+  margin-right: 0;
+}
+.recommendItem .commentBoxWrapper .commentBox {
+  margin-left: 30px;
+}
+.recommendItem .commentBoxWrapper .commentBox .snsIcon {
+  float: left;
+}
+.recommendItem .commentBoxWrapper .commentBox .commentName {
+  font-family: 'ヒラギノ角ゴ Pro W6', "HiraKakuPro-W6", 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  color: #00a49f;
+}
+.recommendItem .commentBoxWrapper .commentBox .commentContents {
+  line-height: 12px;
+  margin-left: 40px;
+  width: 274px;
+  word-break: break-all;
+}
+.recommendItem .commentBoxWrapper .commentBox .commentContentsSpan {
+  margin-left: 4px;
+}
+.recommendItem .commentBoxWrapper .commentBox .commentTime {
+  color: #808080;
+  margin-left: 40px;
+  margin-top: 4px;
+}
+.recommendItem hr.recommendLine {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+.recommendItem .actionedFirstLine {
+  margin-left: 8px;
+}
+.recommendItem .actionedFirstLine .actionedImgIcon {
+  vertical-align: middle;
+}
+.recommendItem .actionedFirstLine .actionedMessage {
+  display: inline;
+  vertical-align: bottom;
+}
+.recommendItem .actionedIcons {
+  margin-left: 30px;
+  margin-top: 7px;
+  margin-bottom: 14px;
+}
+.recommendItem .recIconImg {
+  margin-left: 5px;
+}

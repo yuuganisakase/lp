@@ -1,0 +1,229 @@
+// 10px  77%
+// 11px  85%
+// 12px  93%
+// 13px  100%
+// 14px  108%
+// 15px  116%
+// 16px  124%
+// 17px  131%
+// 18px  139%
+// 19px  147%
+// 20px  154%
+// 21px  162%
+// 22px  170%
+// 23px  177%
+// 24px  185%
+// 25px  193%
+
+
+shadowMix(col)
+  -webkit-box-shadow 1px 1px 1px col, -1px -1px 1px col
+  box-shadow 1px 1px 1px col, -1px -1px 1px col
+
+mainColor = rgb(0,164,159)
+timeColor = rgb(204,204,204)
+pvColor = rgb(0,205,192)
+recBackColor = rgba(128,128,128,0.25)
+tensize = 77%
+elevensize = 85%
+twelvesize = 93%
+thirteensize = 100%
+fourteensize = 108%
+fifteensize = 116%
+sixteensize = 124%
+seventeensize = 131%
+eighteensize = 139%
+nineteensize = 147%
+twentysize = 154%
+
+debugBorder()
+  border solid 1px rgba(0,0,0,0)
+
+itemBorder()
+  border-top solid 1px #cfcfcf
+  border-bottom solid 1px #cfcfcf
+  border-right solid 1px #cfcfcf
+  border-left none
+
+borderradius(n)
+  -webkit-border-radius n
+  border-radius n
+fontW6()
+  font-family 'ヒラギノ角ゴ Pro W6',"HiraKakuPro-W6",'メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+fontHel()
+  font-family: "Helvetica"
+
+body
+  font-size 13px
+  background-image url('../img/backgroundTile.png')
+  background-repeat repeat
+  font-family 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+#header
+  height 67px
+  width 100%
+  position relative
+  #logo
+    left 2px
+    top 17px
+    position absolute
+  #setting
+    right 0
+    position absolute
+#message
+  margin-bottom 17px
+
+#container
+  width 960px
+  debugBorder 2
+  margin-left auto
+  margin-right auto
+  position relative
+  height 100%
+  #feed
+    height 100%
+
+  #plestLine
+    margin-left 24px
+    position absolute
+    height 100%
+    border-left 2px solid rgba(100,100,100,0.3)
+    border-right 2px solid rgba(255,255,255,0.5)
+    width 0
+.mainColor
+  color mainColor
+.item
+  margin-bottom 8px
+div.mainItem
+	float left
+	.plestValue
+	  width 58px
+	  float left
+	  position relative
+	.plestBack
+      width: 50px;
+      height: 50px;
+      background pvColor
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+      border solid 1px mainColor
+      shadowMix mainColor
+    .plestNumber
+      position absolute
+      left 15px
+      top 17px
+      color #ffffff
+  .mainItemBox
+    float left
+    width 525px
+    shadowMix #cfcfcf
+    itemBorder()
+    background-color #ffffff
+    .snsImg
+      position absolute
+    .snsIcon
+      width 50px
+      height 50px
+      float left
+      margin-top 14px
+      margin-left 45px
+    .mainItemInner
+      float left
+      margin-top 14px
+      margin-left 16px
+      .name
+        color mainColor
+        fontW6()
+        font-size fourteensize
+      .time
+        color timeColor
+        font-size twelvesize
+      .postTexts
+        margin-top 12px
+        width 410px
+      .posImg
+        margin-top 12px
+        margin-bottom 10px
+
+.recommendItem:after, .recommendItem:before {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+// .recommendItem:before {
+//   border-right-color: recBackColor;
+//   //border-width: 16px;
+//   top: 20%;
+//   margin-top: -18px;
+//   border-top: 12px solid transparent;
+//   border-right: 18px solid rgba(0,0,0,0.2);
+//   border-bottom: 12px solid transparent;
+// }
+.recommendItem:after {
+  border-right-color: recBackColor;
+  //border-width: 16px;
+  top: 26px;
+  //margin-top: -26px;
+  border-top: 10px solid transparent;
+  border-right: 16px solid recBackColor;
+  border-bottom: 10px solid transparent;
+}
+
+.recommendItem
+  position relative
+  float left
+  width 354px
+  margin-left 19px
+  itemBorder 1
+  borderradius 4px
+  background-color recBackColor
+  font-size elevensize
+  .commentBoxWrapper
+    margin-top 10px
+    .commentImgIcon
+      margin-left 8px
+      float left
+    hr.commentLine
+      width 323px
+      margin-right 0
+    .commentBox
+      margin-left 30px
+      .snsIcon
+        float left
+      .commentName
+        fontW6()
+        color mainColor
+      .commentContents
+        line-height 12px
+        margin-left 40px
+        width 274px
+        word-break break-all
+      .commentContentsSpan
+        margin-left 4px
+      .commentTime
+        color rgb(128,128,128)
+        margin-left 40px
+        margin-top 4px
+  hr.recommendLine
+  	width 100%
+  	margin-top 8px
+  	margin-bottom 12px
+  .actionedFirstLine
+    margin-left 8px
+    .actionedImgIcon
+      vertical-align middle
+    .actionedMessage
+      display inline
+      vertical-align bottom
+  .actionedIcons
+    margin-left 30px
+    margin-top 7px
+    margin-bottom 14px
+  .recIconImg
+    margin-left 5px
+
