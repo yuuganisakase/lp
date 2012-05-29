@@ -53,6 +53,18 @@ fontW6()
 fontHel()
   font-family: "Helvetica"
 
+a:link {
+text-decoration: none;
+}
+
+a:visited {
+text-decoration:none;
+}
+
+a:hover {
+text-decoration:underline;
+}
+
 body
   font-size 13px
   background-image url('../img/backgroundTile.png')
@@ -144,6 +156,34 @@ div.mainItem
       .posImg
         margin-top 12px
         margin-bottom 10px
+    .actionedBox
+      position relative
+      width 100%
+      margin-top -20px
+      .plestActionBox
+        position absolute
+        top 0
+        left 10px
+        .plestLike
+          cursor pointer
+          position relative
+        .plestLike1
+          position absolute
+          top 0
+          left 0
+        .plestLike2
+          position absolute
+          top 0
+          left 0
+        .plestDislike
+          cursor pointer
+          margin-left 20px
+      .snsActionBox
+        position absolute
+        top 0
+        right 10px
+        font-size elevensize
+        color mainColor
 
 .recommendItem:after, .recommendItem:before {
   right: 100%;
@@ -155,15 +195,6 @@ div.mainItem
   pointer-events: none;
 }
 
-// .recommendItem:before {
-//   border-right-color: recBackColor;
-//   //border-width: 16px;
-//   top: 20%;
-//   margin-top: -18px;
-//   border-top: 12px solid transparent;
-//   border-right: 18px solid rgba(0,0,0,0.2);
-//   border-bottom: 12px solid transparent;
-// }
 .recommendItem:after {
   border-right-color: recBackColor;
   //border-width: 16px;

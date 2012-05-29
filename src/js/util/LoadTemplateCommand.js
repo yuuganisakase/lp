@@ -20,7 +20,6 @@ var LoadTemplateCommand = function() {
 					dataType: 'html',
 					cache:false,
 					success: function(data) {
-
 						ich.addTemplate(name, data);
 						that.loadCount += 1;
 						if(that.loadCount == that.nameList.length){

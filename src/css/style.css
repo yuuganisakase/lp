@@ -1,3 +1,12 @@
+a:link {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 body {
   font-size: 13px;
   background-image: url("../img/backgroundTile.png");
@@ -113,6 +122,41 @@ div.mainItem .mainItemBox .mainItemInner .postTexts {
 div.mainItem .mainItemBox .mainItemInner .posImg {
   margin-top: 12px;
   margin-bottom: 10px;
+}
+div.mainItem .mainItemBox .actionedBox {
+  position: relative;
+  width: 100%;
+  margin-top: -20px;
+}
+div.mainItem .mainItemBox .actionedBox .plestActionBox {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+div.mainItem .mainItemBox .actionedBox .plestActionBox .plestLike {
+  cursor: pointer;
+  position: relative;
+}
+div.mainItem .mainItemBox .actionedBox .plestActionBox .plestLike1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+div.mainItem .mainItemBox .actionedBox .plestActionBox .plestLike2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+div.mainItem .mainItemBox .actionedBox .plestActionBox .plestDislike {
+  cursor: pointer;
+  margin-left: 20px;
+}
+div.mainItem .mainItemBox .actionedBox .snsActionBox {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 85%;
+  color: #00a49f;
 }
 .recommendItem:after,
 .recommendItem:before {
