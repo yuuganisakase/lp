@@ -5,6 +5,7 @@ var ItemModel = function(_data) {
 	return{
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
+		dislikeSignal: new signals.Signal(),
 		getService:function() {
 			return data.main.service;
 		},
@@ -15,6 +16,9 @@ var ItemModel = function(_data) {
 			var that = this;
 			that.likeFlag = !that.likeFlag;
 			that.likeSignal.dispatch(that.likeFlag);
+		},
+		togglePlestDislike:function() {
+			this.dislikeSignal.dispatch();
 		}
 	};
 }
@@ -85,8 +89,28 @@ var ItemView = function(_model, _eb) {
 
 		},
 		render: function() {
+			var that = this;
 			var box = "<div class='item'></div>";
-			return $(box).append(mv.render()).append(rv.render()).append("<div style='clear:both;'></div>");
+			
+			var str = $(box).append(mv.render()).append(rv.render()).append("<div style='clear:both;'></div>");
+			that.addEvent(str);
+			return str;
+		},
+		addEvent:function(tar) {
+			var time = 650;
+			model.dislikeSignal.add(function() {
+				console.log("dislike");
+				tar.stop().animate({height: 0,opacity:0,marginBottom:0},
+					{
+						duration:time,
+						easing: 'easeOutQuart',
+						complete:remove
+					});
+			});
+			
+			var remove = function() {
+				tar.remove();
+			}
 		}
 	};
 };
@@ -151,7 +175,6 @@ var MainItemView = function(_model) {
 
 			var time = 140;
 			target.mouseenter(function() {
-				console.log("mouseover");
 				target.find(".actionedBox").stop().animate( { opacity: "1"}, { duration: time, easing: 'easeOutQuad'} );
 			}).mouseleave(function() {
 				target.find(".actionedBox").stop().animate( { opacity: "0"}, { duration: time*1.2, easing: 'easeOutQuad'} );
@@ -161,10 +184,13 @@ var MainItemView = function(_model) {
 			target.find(".plestLike").click(function() {
 				model.togglePlestlike();
 			});
+			target.find(".plestDislike").click(function() {
+				model.togglePlestDislike();
+			});
 
 			model.likeSignal.add(function(val) {
 				console.log(val);
-				var time = 60;
+				var time = 50;
 				var one = target.find(".plestLike1");
 				var two = target.find(".plestLike2");
 				if(val === true){
@@ -172,7 +198,7 @@ var MainItemView = function(_model) {
 						one.stop().animate({"opacity": "0"}, {duration:time});
 					}
 					if(_.isUndefined(two) === false){
-						two.stop().animate({"opacity": "1"}, {duration:time});
+						two.stop().animate({"opacity": "1"}, {duration:time*1.2});
 					}
 					
 				}else{
@@ -180,7 +206,7 @@ var MainItemView = function(_model) {
 						one.stop().animate({"opacity": "1"}, {duration:time});
 					}
 					if(_.isUndefined(two) === false){
-						two.stop().animate({"opacity": "0"}, {duration:time});
+						two.stop().animate({"opacity": "0"}, {duration:time*1.2});
 					}
 				}
 			});

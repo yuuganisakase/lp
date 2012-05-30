@@ -59,7 +59,6 @@ var MainItemView = function(_model) {
 
 			var time = 140;
 			target.mouseenter(function() {
-				console.log("mouseover");
 				target.find(".actionedBox").stop().animate( { opacity: "1"}, { duration: time, easing: 'easeOutQuad'} );
 			}).mouseleave(function() {
 				target.find(".actionedBox").stop().animate( { opacity: "0"}, { duration: time*1.2, easing: 'easeOutQuad'} );
@@ -69,10 +68,13 @@ var MainItemView = function(_model) {
 			target.find(".plestLike").click(function() {
 				model.togglePlestlike();
 			});
+			target.find(".plestDislike").click(function() {
+				model.togglePlestDislike();
+			});
 
 			model.likeSignal.add(function(val) {
 				console.log(val);
-				var time = 60;
+				var time = 50;
 				var one = target.find(".plestLike1");
 				var two = target.find(".plestLike2");
 				if(val === true){
@@ -80,7 +82,7 @@ var MainItemView = function(_model) {
 						one.stop().animate({"opacity": "0"}, {duration:time});
 					}
 					if(_.isUndefined(two) === false){
-						two.stop().animate({"opacity": "1"}, {duration:time});
+						two.stop().animate({"opacity": "1"}, {duration:time*1.2});
 					}
 					
 				}else{
@@ -88,7 +90,7 @@ var MainItemView = function(_model) {
 						one.stop().animate({"opacity": "1"}, {duration:time});
 					}
 					if(_.isUndefined(two) === false){
-						two.stop().animate({"opacity": "0"}, {duration:time});
+						two.stop().animate({"opacity": "0"}, {duration:time*1.2});
 					}
 				}
 			});

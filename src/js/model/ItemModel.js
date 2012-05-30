@@ -5,6 +5,7 @@ var ItemModel = function(_data) {
 	return{
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
+		dislikeSignal: new signals.Signal(),
 		getService:function() {
 			return data.main.service;
 		},
@@ -15,6 +16,9 @@ var ItemModel = function(_data) {
 			var that = this;
 			that.likeFlag = !that.likeFlag;
 			that.likeSignal.dispatch(that.likeFlag);
+		},
+		togglePlestDislike:function() {
+			this.dislikeSignal.dispatch();
 		}
 	};
 }
