@@ -4,6 +4,7 @@ var MainItemView = function(_model) {
 
 	var model = _model;
 	var template;
+	var color = new Color();
 	return{
 		init: function() {
 
@@ -54,7 +55,7 @@ var MainItemView = function(_model) {
 		},
 		changePlestSize:function(val) {
 
-			var rad = (val / 18) + 35;
+			var rad = Math.floor((val / 18) + 35);
 			var margin = Math.floor((50 - rad)/2);
 			var left = 12;
 			if(val < 100){
@@ -63,13 +64,24 @@ var MainItemView = function(_model) {
 			if(val < 10){
 				left = 20;
 			}
+			var base = color.RGBtoHSV(0,205,192);
+			var cm = (250 - val)/10;
+			var after = color.HSVtoRGB(base.h + cm, base.s, base.v - cm);
+
+			var mainBase = color.RGBtoHSV(0,164,159);
+			var mainColor = color.HSVtoRGB(mainBase.h + cm, mainBase.s, mainBase.v - cm);
+			var col = "rgb(" + mainColor.r + "," + mainColor.g + "," + mainColor.b + ")";
 			$(template).find(".plestBack").css({
 				"width": rad + "px",
 				"height": rad + "px",
 				"-moz-border-radius": rad + "px",
 				"-webkit-border-radius": rad + "px",
 				"border-radius": rad + "px",
-				"margin-left": margin + "px"
+				"margin-left": margin + "px",
+				"background": "rgb(" + after.r + "," + after.g + "," + after.b + ")",
+				"border": "solid 1px " + "rgb(" + mainColor.r + "," + mainColor.g + "," + mainColor.b + ")",
+				"-webkit-box-shadow":  "1px 1px 1px " + col + ", -1px -1px 1px " + col,
+				"box-shadow": "1px 1px 1px " + col + ", -1px -1px 1px " + col
 			}).end().find(".plestNumber").css({
 				"left": left + "px",
 				"top": (19 - margin) + "px"

@@ -15,8 +15,10 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         src: [
+
         'src/js/model/ItemModel.js',
         'src/js/model/MainModel.js',
+        'src/js/util/color.js',
         'src/js/util/LoadTemplateCommand.js',
         'src/js/util/LoadFeedCommand.js',
         'src/js/view/ItemView.js',
