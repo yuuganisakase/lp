@@ -245,10 +245,25 @@ hr.commentLine
     word-break break-all
   .commentContentsSpan
     margin-left 4px
-  .commentTime
-    color rgb(128,128,128)
+  .commentMisc
     margin-left 40px
     margin-top 4px
+    position relative
+    .commentTime
+      color rgb(128,128,128)
+      //position absolute
+      display inline
+      //top 0
+    .commentAction
+      color mainColor
+      display inline
+      //position absolute
+      //top 0
+    .commentMore
+      color mainColor
+      position absolute
+      top 0
+      right 0
 hr.recommendLine
 	width 100%
 	margin-top 8px

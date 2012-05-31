@@ -3,6 +3,7 @@
 var MainItemView = function(_model) {
 
 	var model = _model;
+	var template;
 	return{
 		init: function() {
 
@@ -36,7 +37,11 @@ var MainItemView = function(_model) {
 				snsAction2: snsA.action2,
 				snsAction3: snsA.action3
 			})[0];
-			console.log("height :::");
+			
+			template = tar;
+
+			that.changePlestSize(main.plestValue);
+
 			var tarObj = $(tar);
 			var h = tarObj.appendTo($("#container"));
 			if(h.height() < 110){
@@ -46,6 +51,30 @@ var MainItemView = function(_model) {
 			that.addEvent(tar);
 			console.log(h.height());
 			return tar;
+		},
+		changePlestSize:function(val) {
+
+			var rad = (val / 18) + 35;
+			var margin = Math.floor((50 - rad)/2);
+			var left = 12;
+			if(val < 100){
+				left = 16;
+			}
+			if(val < 10){
+				left = 20;
+			}
+			$(template).find(".plestBack").css({
+				"width": rad + "px",
+				"height": rad + "px",
+				"-moz-border-radius": rad + "px",
+				"-webkit-border-radius": rad + "px",
+				"border-radius": rad + "px",
+				"margin-left": margin + "px"
+			}).end().find(".plestNumber").css({
+				"left": left + "px",
+				"top": (19 - margin) + "px"
+			});
+
 		},
 		addCssForActionedBox: function(tar) {
 			$(tar).find(".actionedBox")

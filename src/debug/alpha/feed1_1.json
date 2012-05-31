@@ -3,7 +3,7 @@
         {
         	"read": false,
         	"main":{
-        		"plestValue": 123,
+        		"plestValue": 223,
             	"service": 0,
             	"snsIcon": "debug/dummyIcon5.png",
             	"time": "123455",
@@ -101,7 +101,7 @@
         {
         	"read": false,
         	"main":{
-        		"plestValue": 100,
+        		"plestValue": 160,
             	"service": 1,
             	"snsIcon": "debug/dummyIcon4.png",
             	"time": "01:23",
@@ -162,7 +162,7 @@
         {
         	"read": false,
         	"main":{
-        		"plestValue": 100,
+        		"plestValue": 120,
             	"service": 0,
             	"snsIcon": "debug/dummyIcon5.png",
             	"time": "123455",
@@ -243,7 +243,7 @@
                 {
         	"read": false,
         	"main":{
-        		"plestValue": 100,
+        		"plestValue": 80,
             	"service": 0,
             	"snsIcon": "debug/dummyIcon5.png",
             	"time": "123455",
@@ -324,7 +324,7 @@
         {
         	"read": false,
         	"main":{
-        		"plestValue": 100,
+        		"plestValue": 40,
             	"service": 0,
             	"snsIcon": "debug/dummyIcon5.png",
             	"time": "123455",

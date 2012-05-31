@@ -231,10 +231,24 @@ hr.commentLine {
 .commentBox .commentContentsSpan {
   margin-left: 4px;
 }
-.commentBox .commentTime {
-  color: #808080;
+.commentBox .commentMisc {
   margin-left: 40px;
   margin-top: 4px;
+  position: relative;
+}
+.commentBox .commentMisc .commentTime {
+  color: #808080;
+  display: inline;
+}
+.commentBox .commentMisc .commentAction {
+  color: #00a49f;
+  display: inline;
+}
+.commentBox .commentMisc .commentMore {
+  color: #00a49f;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 hr.recommendLine {
   width: 100%;

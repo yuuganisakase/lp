@@ -9,6 +9,7 @@ var ItemModel = function(_data) {
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
 		dislikeSignal: new signals.Signal(),
+		recommendSignal: new signals.Signal(),
 		getService:function() {
 			return data.main.service;
 		},
@@ -30,7 +31,11 @@ var ItemModel = function(_data) {
 			return recommendAnimationFlag;
 		},
 		setCommentOpen:function(f) {
-			isCommentOpen = f;
+			var that = this;
+			if(isCommentOpen !== f){
+				isCommentOpen = f;
+				that.recommendSignal.dispatch("comment",f);
+			}
 		},
 		getCommentOpen:function() {
 			return isCommentOpen;
