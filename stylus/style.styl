@@ -62,7 +62,7 @@ text-decoration:none;
 }
 
 a:hover {
-text-decoration:underline;
+text-decoration:none;
 }
 
 body
@@ -122,8 +122,8 @@ div.mainItem
       shadowMix mainColor
     .plestNumber
       position absolute
-      left 15px
-      top 17px
+      left 12px
+      top 19px
       color #ffffff
   .mainItemBox
     float left
@@ -216,45 +216,54 @@ div.mainItem
   font-size elevensize
   .commentBoxWrapper
     margin-top 10px
+    overflow hidden
+    position relative
     .commentImgIcon
       margin-left 8px
       float left
-    hr.commentLine
-      width 323px
-      margin-right 0
-    .commentBox
-      margin-left 30px
-      .snsIcon
-        float left
-      .commentName
-        fontW6()
-        color mainColor
-      .commentContents
-        line-height 12px
-        margin-left 40px
-        width 274px
-        word-break break-all
-      .commentContentsSpan
-        margin-left 4px
-      .commentTime
-        color rgb(128,128,128)
-        margin-left 40px
-        margin-top 4px
-  hr.recommendLine
-  	width 100%
-  	margin-top 8px
-  	margin-bottom 12px
-  .actionedFirstLine
-    margin-left 8px
-    .actionedImgIcon
-      vertical-align middle
-    .actionedMessage
-      display inline
-      vertical-align bottom
-  .actionedIcons
-    margin-left 30px
-    margin-top 7px
-    margin-bottom 14px
-  .recIconImg
-    margin-left 5px
+    .commentBoxWrapperInner
+      position absolute
+      bottom 0
+      .commentInput
+        margin-left 31px
+        width 313px
+hr.commentLine
+  width 322px
+  margin-right -11px
+  border-width 1px
+.commentBox
+  margin-left 30px
+  .snsIcon
+    float left
+  .commentName
+    fontW6()
+    color mainColor
+  .commentContents
+    line-height 12px
+    margin-left 40px
+    width 274px
+    word-break break-all
+  .commentContentsSpan
+    margin-left 4px
+  .commentTime
+    color rgb(128,128,128)
+    margin-left 40px
+    margin-top 4px
+hr.recommendLine
+	width 100%
+	margin-top 8px
+	margin-bottom 12px
+.actionedFirstLine
+  margin-left 8px
+  .actionedImgIcon
+    vertical-align middle
+  .actionedMessage
+    display inline
+    vertical-align bottom
+.actionedIcons
+  margin-left 30px
+  margin-top 7px
+  margin-bottom 14px
+.recIconImg
+  margin-left 5px
 

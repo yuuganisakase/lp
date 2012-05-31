@@ -5,7 +5,7 @@ a:visited {
   text-decoration: none;
 }
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 body {
   font-size: 13px;
@@ -77,8 +77,8 @@ div.mainItem .plestBack {
 }
 div.mainItem .plestNumber {
   position: absolute;
-  left: 15px;
-  top: 17px;
+  left: 12px;
+  top: 19px;
   color: #fff;
 }
 div.mainItem .mainItemBox {
@@ -192,59 +192,70 @@ div.mainItem .mainItemBox .actionedBox .snsActionBox {
 }
 .recommendItem .commentBoxWrapper {
   margin-top: 10px;
+  overflow: hidden;
+  position: relative;
 }
 .recommendItem .commentBoxWrapper .commentImgIcon {
   margin-left: 8px;
   float: left;
 }
-.recommendItem .commentBoxWrapper hr.commentLine {
-  width: 323px;
-  margin-right: 0;
+.recommendItem .commentBoxWrapper .commentBoxWrapperInner {
+  position: absolute;
+  bottom: 0;
 }
-.recommendItem .commentBoxWrapper .commentBox {
+.recommendItem .commentBoxWrapper .commentBoxWrapperInner .commentInput {
+  margin-left: 31px;
+  width: 313px;
+}
+hr.commentLine {
+  width: 322px;
+  margin-right: -11px;
+  border-width: 1px;
+}
+.commentBox {
   margin-left: 30px;
 }
-.recommendItem .commentBoxWrapper .commentBox .snsIcon {
+.commentBox .snsIcon {
   float: left;
 }
-.recommendItem .commentBoxWrapper .commentBox .commentName {
+.commentBox .commentName {
   font-family: 'ヒラギノ角ゴ Pro W6', "HiraKakuPro-W6", 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   color: #00a49f;
 }
-.recommendItem .commentBoxWrapper .commentBox .commentContents {
+.commentBox .commentContents {
   line-height: 12px;
   margin-left: 40px;
   width: 274px;
   word-break: break-all;
 }
-.recommendItem .commentBoxWrapper .commentBox .commentContentsSpan {
+.commentBox .commentContentsSpan {
   margin-left: 4px;
 }
-.recommendItem .commentBoxWrapper .commentBox .commentTime {
+.commentBox .commentTime {
   color: #808080;
   margin-left: 40px;
   margin-top: 4px;
 }
-.recommendItem hr.recommendLine {
+hr.recommendLine {
   width: 100%;
   margin-top: 8px;
   margin-bottom: 12px;
 }
-.recommendItem .actionedFirstLine {
+.actionedFirstLine {
   margin-left: 8px;
 }
-.recommendItem .actionedFirstLine .actionedImgIcon {
+.actionedFirstLine .actionedImgIcon {
   vertical-align: middle;
 }
-.recommendItem .actionedFirstLine .actionedMessage {
+.actionedFirstLine .actionedMessage {
   display: inline;
   vertical-align: bottom;
 }
-.recommendItem .actionedIcons {
+.actionedIcons {
   margin-left: 30px;
   margin-top: 7px;
   margin-bottom: 14px;
 }
-.recommendItem .recIconImg {
+.recIconImg {
   margin-left: 5px;
 }

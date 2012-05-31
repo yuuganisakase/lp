@@ -14,21 +14,38 @@
             "comment": [
                 {
                     "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentName": "5ninme",
+                    "commentTime": "12:34",
+                    "snsIcon": "debug/dummyIcon3.png",
+                    "url": "https://www.facebook.com/toukubo"
+                },
+       			{
+                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentName": "4ninme",
+                    "commentTime": "12:34",
+                    "snsIcon": "debug/dummyIcon3.png",
+                    "url": "https://www.facebook.com/toukubo"
+               	},
+                {
+                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentName": "3ninme",
+                    "commentTime": "12:34",
+                    "snsIcon": "debug/dummyIcon3.png",
+                    "url": "https://www.facebook.com/toukubo"
+                },
+                {
+                    "commentContents": "  comment comment comment comment comment ",
                     "commentName": "aikou",
                     "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png"
+                    "snsIcon": "debug/dummyIcon1.png",
+                    "url": "https://www.facebook.com/toukubo"
                 },
                 {
                     "commentContents": "comment comment comment comment ",
                     "commentName": "oka",
                     "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
+                    "snsIcon": "debug/dummyIcon2.png",
+                    "url": "https://www.facebook.com/toukubo"
                 }
             ],
             "recommends":{
@@ -155,7 +172,7 @@
         	},
             "comment": [
                 {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentContents": "comment comment commentcommentcommentcommentcommentcommentcommentcommentcommentcommentcommentcomment comment comment comment comment comment comment ",
                     "commentName": "aikou",
                     "commentTime": "12:36",
                     "snsIcon": "debug/dummyIcon1.png"
@@ -167,7 +184,7 @@
                     "snsIcon": "debug/dummyIcon2.png"
                 },
                 {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentContents": "comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment ",
                     "commentName": "3ninme",
                     "commentTime": "12:34",
                     "snsIcon": "debug/dummyIcon3.png"

@@ -1,38 +1,75 @@
 {
     "list": [
         {
+            //既読・未読
         	"read": false, 
+
+            //Plestがふるアイテムごとの固有ID
         	"itemId": "abc123456",
+
+            //元のサービスのアイテムの場所
         	"itemUrl": "https://www.facebook.com/tatsuya.oka.39/timeline/story?ut=76&wstart=1335855600&wend=1338533999&hash=-539148947165929752&pagefilter=3",
+
+            //アイテムに付いているコメントすべて
+            //commentTimeの古いものが最初、新しいのが最後
             "comment": [
                 {
                     "commentContents": "comment comment comment comment comment comment comment comment comment ",
                     "commentName": "aikou",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png"
+                    "commentTime": "2012-05-29T07:30:57+0900",
+                    "snsIcon": "debug/dummyIcon1.png",
+                    "url": "https://www.facebook.com/toukubo"
                 },
                 {
                     "commentContents": "comment comment comment comment ",
                     "commentName": "oka",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png"
+                    "commentTime": "2012-05-29T06:30:57+0900",
+                    "snsIcon": "debug/dummyIcon2.png",
+                    "url": "https://www.facebook.com/toukubo"
                 },
                 {
                     "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
+                    "commentName": "三人目",
+                    "commentTime": "2012-05-28T22:30:57+0900",
+                    "snsIcon": "debug/dummyIcon3.png",
+                    "url": "https://www.facebook.com/toukubo"
+                },
+                {
+                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentName": "よにんめ",
+                    "commentTime": "2012-05-28T20:30:57+0900",
+                    "snsIcon": "debug/dummyIcon4.png",
+                    "url": "https://www.facebook.com/toukubo"
+                },
+                {
+                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
+                    "commentName": "ゴニンメ",
+                    "commentTime": "2012-05-28T18:30:57+0900",
+                    "snsIcon": "debug/dummyIcon5.png",
+                    "url": "https://www.facebook.com/toukubo"
                 }
             ],
             "main": {
-                "name": "nagaoka",
+                "name": "長岡まさひろ",
                 "plestValue": 123,
                 "mainImg": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
-                "mainText": "hello hello",
+                "mainText": "こんにちは、hello hello",
+
+                // プライベートメッセージか否か
+                // TwitterのDM、FBメッセージを想定
+                "private": false,
+
+                // 0: facebook
+                // 1: twitter
                 "service": 0,
+
                 "snsIcon": "debug/dummyIcon5.png",
-                "time": "123455"
+                "time": "2012-05-28T18:10:57+0900"
             },
+
+
+            //このアイテムに何らかのアクションを起こした人すべて
+            //発信者値が大きい順に並ぶ
             "recommends": {
             	"num": 58,
                 "data": [

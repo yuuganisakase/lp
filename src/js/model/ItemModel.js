@@ -2,6 +2,9 @@
 
 var ItemModel = function(_data) {
 	var data = _data;
+	var recommendAnimationFlag = false;
+	var isCommentOpen = false;
+	var isActionedOpen = false;
 	return{
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
@@ -19,6 +22,25 @@ var ItemModel = function(_data) {
 		},
 		togglePlestDislike:function() {
 			this.dislikeSignal.dispatch();
+		},
+		setRecommendAnimationFlag:function(f) {
+			recommendAnimationFlag = f;
+		},
+		getRecommendAnimationFlag:function() {
+			return recommendAnimationFlag;
+		},
+		setCommentOpen:function(f) {
+			isCommentOpen = f;
+		},
+		getCommentOpen:function() {
+			return isCommentOpen;
+		},
+		setActionedOpen:function(f) {
+			isActionedOpen = f;
+		},
+		getActionedOpen:function() {
+			return isActionedOpen;
 		}
+
 	};
 }
