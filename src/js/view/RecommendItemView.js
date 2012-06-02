@@ -30,12 +30,19 @@ var RecommendItemView = function(_model) {
 
 				commentBox = $(template).find(".commentBoxWrapperInner");
 
-				that.createComment(0, commentBox);
-				var hh = that.setDisplayCommentNum(2, commentBox).height;
-				commentBox.parent().css("height", hh + "px");
+				if(comments.length === 0){
+					$(template).find(".recommentLine").remove().end()
+								.find(".commentBoxWrapper").remove().end()
+								.find(".actionedBox").css("margin-top","10px");
+				}else{
+					that.createComment(0, commentBox);
+					var hh = that.setDisplayCommentNum(2, commentBox).height;
+					commentBox.parent().css("height", hh + "px");
+				}
 
 				var actionedIconBox = $(template).find(".actionedIcons");
-				for (var j = 0; j < 6; j++) {
+				var recMax = Math.min(recommends.data.length,6);
+				for (var j = 0; j < recMax; j++) {
 					var r = recommends.data[j];
 					var img = "<img class='recIconImg' src=" + r.icon + "></img>";
 					actionedIconBox.append(img);

@@ -30,12 +30,10 @@ $(function() {
 		});
 
 
-
-
-
 	});
 
 	var onLoadFeedComplete = function(data) {
+		console.log(data);
 		loadingFlag = false;
 		if(startFlag === false){
 			startFlag = true;
@@ -58,7 +56,7 @@ $(function() {
 				}
 			},900);
 		}
-			console.log("on load feed !!!!!")
+			console.log("on load feed !!!!!");
 			console.log(data);
 			var createFeed = function(obj) {
 					var im = new ItemModel(obj);

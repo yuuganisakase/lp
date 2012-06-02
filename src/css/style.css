@@ -129,6 +129,7 @@ div.mainItem .mainItemBox .mainItemInner .time {
 div.mainItem .mainItemBox .mainItemInner .postTexts {
   margin-top: 12px;
   width: 410px;
+  margin-bottom: 12px;
 }
 div.mainItem .mainItemBox .mainItemInner .posImg {
   margin-top: 12px;

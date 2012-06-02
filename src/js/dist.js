@@ -242,9 +242,10 @@ var LoadFeedCommand = function() {
 var ItemView = function(_model, _eb) {
 	var model = _model;
 	var eb = _eb;
-
-	var rv = new RecommendItemView(model);
 	var mv = new MainItemView(model);
+	
+	var rv = new RecommendItemView(model);
+	
 	return {
 		init: function() {
 
@@ -309,7 +310,6 @@ var MainItemView = function(_model) {
 				name : main.name,
 				time : timeConvert(main.time),
 				postTexts: main.text,
-				postImg: main.picture,
 				plestValue: model.getPlestValue(),
 				snsAction1: snsA.action1,
 				snsAction2: snsA.action2,
@@ -317,13 +317,46 @@ var MainItemView = function(_model) {
 			})[0];
 			
 			template = tar;
+			if(main.picture){
+				$(template).find(".contents").append("<img class='posImg' src=" + main.picture + " />");
+			}else if(main.place){
+				var place = main.place;
+				var lat = place.location.latitude;
+				var lon = place.location.longitude;
+				var contents = $(template).find(".contents");
+				contents.css({
+					//"position":"absolute",
+					"width":"403px",
+					"height":"122px"
+				});
+				$(template).find(".mainItemInner").css("position","relative");
 
+				var map = new Microsoft.Maps.Map(contents[0],
+					{
+						credentials: 'AmJ8I4iindTDfvD5k4--QDoLqVkks0BXGup2Cv2TMHYNQ1wV-Ld0RkFH_jwaPEyf',
+						enableClickableLogo: false,
+						showDashboard: false,
+						enableSearchLogo: false,
+						disableZooming: true,
+						//disablePanning: true,
+						showScalebar: false,
+						useInertia: false,
+						center: new Microsoft.Maps.Location(lat, lon),
+						zoom: 15,
+						width: 403,
+						height:122
+					});
+			}
+			
 			that.changePlestSize(model.getPlestValue());
 
-			var tarObj = $(tar);
+			var tarObj = $(template);
 			var h = tarObj.appendTo($("#container"));
+			alert(h.height());
 			if(h.height() < 110){
-				tar = that.addCssForActionedBox(tar);
+				tar = that.addCssForActionedBox(tar, 0);
+			}else if(main.place){
+				tar = that.addCssForActionedBox(tar, 10);
 			}
 			tarObj.remove();
 			that.addEvent(tar);
@@ -365,9 +398,9 @@ var MainItemView = function(_model) {
 			});
 
 		},
-		addCssForActionedBox: function(tar) {
+		addCssForActionedBox: function(tar,mt) {
 			$(tar).find(".actionedBox")
-					.css("margin-top","0px")
+					.css("margin-top", mt + "px")
 					.css("height","20px");
 			return tar;
 		},
@@ -448,12 +481,19 @@ var RecommendItemView = function(_model) {
 
 				commentBox = $(template).find(".commentBoxWrapperInner");
 
-				that.createComment(0, commentBox);
-				var hh = that.setDisplayCommentNum(2, commentBox).height;
-				commentBox.parent().css("height", hh + "px");
+				if(comments.length === 0){
+					$(template).find(".recommentLine").remove().end()
+								.find(".commentBoxWrapper").remove().end()
+								.find(".actionedBox").css("margin-top","10px");
+				}else{
+					that.createComment(0, commentBox);
+					var hh = that.setDisplayCommentNum(2, commentBox).height;
+					commentBox.parent().css("height", hh + "px");
+				}
 
 				var actionedIconBox = $(template).find(".actionedIcons");
-				for (var j = 0; j < 6; j++) {
+				var recMax = Math.min(recommends.data.length,6);
+				for (var j = 0; j < recMax; j++) {
 					var r = recommends.data[j];
 					var img = "<img class='recIconImg' src=" + r.icon + "></img>";
 					actionedIconBox.append(img);
@@ -701,12 +741,10 @@ $(function() {
 		});
 
 
-
-
-
 	});
 
 	var onLoadFeedComplete = function(data) {
+		console.log(data);
 		loadingFlag = false;
 		if(startFlag === false){
 			startFlag = true;
@@ -729,7 +767,7 @@ $(function() {
 				}
 			},900);
 		}
-			console.log("on load feed !!!!!")
+			console.log("on load feed !!!!!");
 			console.log(data);
 			var createFeed = function(obj) {
 					var im = new ItemModel(obj);
