@@ -9,124 +9,221 @@
 
             //元のサービスのアイテムの場所
         	"itemUrl": "https://www.facebook.com/tatsuya.oka.39/timeline/story?ut=76&wstart=1335855600&wend=1338533999&hash=-539148947165929752&pagefilter=3",
+            
+            "plestValue": 123,
 
-            //アイテムに付いているコメントすべて
-            //commentTimeの古いものが最初、新しいのが最後
-            "comment": [
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "aikou",
-                    "commentTime": "2012-05-29T07:30:57+0900",
-                    "snsIcon": "debug/dummyIcon1.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "comment comment comment comment ",
-                    "commentName": "oka",
-                    "commentTime": "2012-05-29T06:30:57+0900",
-                    "snsIcon": "debug/dummyIcon2.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "三人目",
-                    "commentTime": "2012-05-28T22:30:57+0900",
-                    "snsIcon": "debug/dummyIcon3.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "よにんめ",
-                    "commentTime": "2012-05-28T20:30:57+0900",
-                    "snsIcon": "debug/dummyIcon4.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "ゴニンメ",
-                    "commentTime": "2012-05-28T18:30:57+0900",
-                    "snsIcon": "debug/dummyIcon5.png",
-                    "url": "https://www.facebook.com/toukubo"
-                }
-            ],
+            // プライベートメッセージか否か
+            // TwitterのDM、FBメッセージを想定
+            "private": false,
+
+            // 0: facebook
+            // 1: twitter
+            "service": 0,
+
+
+            //アイテムに付いているコメント
+            //timeの古いものが最初、新しいのが最後
+            "comments": 
+                //コメント総数
+                "count":5,
+                "data":[
+                    {
+                        // コメント内容
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        // ユーザー名
+                        "name": "oka tatsuya",
+                        // コメントした時間
+                        "time": "2012-05-24T07:30:57+0900",
+                        // アイコン画像URL
+                        "icon": "debug/dummyIcon1.png",
+                        //元のSNSのユーザーID
+                        "userId":14230524,
+                        //元のsnsのユーザーページのURL
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment ",
+                        "name": "four",
+                        "time": "2012-05-25T06:30:57+0900",
+                        "icon": "debug/dummyIcon2.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "三人目",
+                        "time": "2012-05-26T22:30:57+0900",
+                        "icon": "debug/dummyIcon3.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "oka",
+                        "time": "2012-05-27T20:30:57+0900",
+                        "icon": "debug/dummyIcon4.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "aikou",
+                        "time": "2012-05-28T18:30:57+0900",
+                        "icon": "debug/dummyIcon5.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    }
+                ]
+            }
             "main": {
                 "name": "長岡まさひろ",
-                "plestValue": 123,
-                "mainImg": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
-                "mainText": "こんにちは、hello hello",
 
-                // プライベートメッセージか否か
-                // TwitterのDM、FBメッセージを想定
-                "private": false,
+                //投稿ユーザーのSNSアイコン
+                "icon": "debug/dummyIcon5.png",
 
-                // 0: facebook
-                // 1: twitter
-                "service": 0,
+                //写真を表示する時のURL
+                "picture": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
 
-                "snsIcon": "debug/dummyIcon5.png",
-                "time": "2012-05-28T18:10:57+0900"
+                //動画を表示するときのURL
+                "source": "http://www.youtube.com/v/oePx6jejyfs?version=3&autohide=1&autoplay=1",
+
+                //テキスト投稿
+                "text": "こんにちは、hello hello",
+
+                "time": "2012-05-28T18:10:57+0900",
+
+                //FBでlike/shareしたときのLink先の情報 FB連携された他SNSの投稿情報もここに入る（例、FourSquareのチェックイン）
+                "inner":{
+                    "picture": "https://foursquare.com/img/categories_map/food/coffeeshop.png", 
+                    "link": "http://ameblo.jp/rolarola/entry-11259944858.html",
+                    "name": "ローラフライデー", 
+                    "caption": "ameblo.jp", 
+                    "description": "ローラのローラ Official Blog「OK！OK！」Powered by Amebaの記事、フライデー☆です"
+                },
+
+                // facebook check in
+                "place": {
+                    // 場所のId、Facebookの場合、checkin apiでかえってくる値そのまま
+                    "id": "205181876178403", 
+                    "name": "Gokokuji Station", 
+                    "location": {
+                        "street": "大塚5-40-8", 
+                        "city": "Bunkyo-ku", 
+                        "state": "Tokyo", 
+                        "country": "Japan", 
+                        "latitude": 35.718074667274, 
+                        "longitude": 139.7280339223
+                    }
+                },
+
+                //FBと連携されてるアプリケーション、APIそのまま
+                "application": {
+                    "name": "foursquare", 
+                    "namespace": "playfoursquare", 
+                    "id": "86734274142"
+                }, 
+
+                //FBでアクション可能なリスト APIそのまま
+                "actions": [
+                    {
+                      "name": "Comment", 
+                      "link": "https://www.facebook.com/100001916831839/posts/341146872625871"
+                    }, 
+                    {
+                      "name": "Like", 
+                      "link": "https://www.facebook.com/100001916831839/posts/341146872625871"
+                    }, 
+                    {
+                      "name": "Tatsuya on foursquare", 
+                      "link": "https://foursquare.com/yuuganisakase"
+                    }
+                ],
+
+                //twitterの場合 ツイートのIDが入る
+                // "actions": [
+                //     {
+                //       "name": "id", 
+                //       "link": 341146872625871
+                //     }
+                // ],
+
+
+
+
+                //ユーザーがこのアイテムにアクションしたかどうか
+                "actioned": {
+                    //FBでいいね！したかどうか
+                    "liked":false
+                }
+
+                //twitterの場合
+                // "actioned": {
+                //      "favorited": false,
+                //      "retweeted": true
+                // },
             },
 
 
-            //このアイテムに何らかのアクションを起こした人すべて
+            //このアイテムにコメントとかFavとか何らかのアクションを起こした人すべて
             //発信者値が大きい順に並ぶ
             "recommends": {
-            	"num": 58,
+                //総数
+            	"count": 58, 
+
                 "data": [
                     {
-                        "img": "debug/dummyIcon4.png",
+                        "icon": "debug/dummyIcon4.png",
                         "name": "toukubo",
-                        "url": "https://www.facebook.com/toukubo"
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon5.png",
-                        "name": "namae1",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon5.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon1.png",
-                        "name": "namae 2",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon6.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon2.png",
-                        "name": "namae 3",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon1.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon3.png",
-                        "name": "namae 4",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon2.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon1.png",
-                        "name": "namae 2",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon3.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon2.png",
-                        "name": "namae 3",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon4.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon3.png",
-                        "name": "namae 4",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon4.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     },
                     {
-                        "img": "debug/dummyIcon1.png",
-                        "name": "namae 2",
-                        "url": "https://www.facebook.com/toukubo"
-                    },
-                    {
-                        "img": "debug/dummyIcon2.png",
-                        "name": "namae 3",
-                        "url": "https://www.facebook.com/toukubo"
-                    },
-                    {
-                        "img": "debug/dummyIcon3.png",
-                        "name": "namae 4",
-                        "url": "https://www.facebook.com/toukubo"
+                        "icon": "debug/dummyIcon4.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
                     }
                 ]
             }
