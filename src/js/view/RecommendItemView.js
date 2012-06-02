@@ -1,7 +1,10 @@
 //RecommendItemView.js
 var RecommendItemView = function(_model) {
 		var model = _model;
-		var comments = model.getData().comment;
+		var comments = model.getComments();
+		var recommends = model.getRecommends();
+		var service = model.getService();
+		var data = model.getData();
 		var commentBox;
 		var inputStr = "<input class='commentInput' type='text' name='example1' >";
 		var config = window.config;
@@ -14,12 +17,7 @@ var RecommendItemView = function(_model) {
 			},
 			render: function() {
 				var that = this;
-				var data = model.getData();
-				var comments = data.comment;
-				var recommends = data.recommends;
-
-
-				var service = model.getService();
+								
 				var actionedMessage;
 				if (service === 0) {
 					actionedMessage = config.FBaction.actionedMessage;
@@ -27,7 +25,7 @@ var RecommendItemView = function(_model) {
 					actionedMessage = config.TWaction.actionedMessage;
 				}
 				template = ich.recommendItem({
-					actionedMessage: recommends.num + actionedMessage
+					actionedMessage: recommends.count + actionedMessage
 				})[0];
 
 				commentBox = $(template).find(".commentBoxWrapperInner");
@@ -39,7 +37,7 @@ var RecommendItemView = function(_model) {
 				var actionedIconBox = $(template).find(".actionedIcons");
 				for (var j = 0; j < 6; j++) {
 					var r = recommends.data[j];
-					var img = "<img class='recIconImg' src=" + r.img + "></img>";
+					var img = "<img class='recIconImg' src=" + r.icon + "></img>";
 					actionedIconBox.append(img);
 				}
 				that.addEvent(template);
@@ -85,7 +83,6 @@ var RecommendItemView = function(_model) {
 					}
 					num -= 1;
 				}
-				console.log(hh);
 				return {
 					"height": hh,
 					"bottom": margin
@@ -95,31 +92,30 @@ var RecommendItemView = function(_model) {
 			createComment: function(_num, parent) {
 				var that = this;
 				var num;
-				var data = model.getData();
 				if (_num === 0) {
-					num = data.comment.length;
+					num = comments.length;
 				} else {
 					num = _num;
 				}
 
 				for (var i = 0; i < num; i++) {
-					var c = data.comment[i];
+					var c = comments[i];
 					if (i === (comments.length - 1)) {
 						c.commentMore = config.commentMore1 + comments.length + config.commentMore2;
 					} else {
 						c.commentMore = "";
 					}
-					if (data.main.service === 0) {
+					if (service === 0) {
 						c.commentAction = ""; //config.FBaction.action1;
 					} else {
 						c.commentAction = "";
 					}
 					var cmp = ich.commentPartial({
 						url: c.url,
-						snsIcon: c.snsIcon,
-						commentName: c.commentName,
-						commentTime: c.commentTime,
-						commentContents: c.commentContents,
+						snsIcon: c.icon,
+						commentName: c.name,
+						commentTime: timeConvert(c.time),
+						commentContents: c.message,
 						commentMore: c.commentMore,
 						commentAction: c.commentAction
 					});
@@ -217,7 +213,6 @@ var RecommendItemView = function(_model) {
 					console.log("comment click");
 					console.log(e);
 					if ($(e.target).hasClass("commentInput")) {
-						console.log("comment input clicked");
 						return;
 					}else if(model.getRecommendAnimationFlag() === true){
 						return;

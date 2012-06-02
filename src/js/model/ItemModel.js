@@ -11,10 +11,22 @@ var ItemModel = function(_data) {
 		dislikeSignal: new signals.Signal(),
 		recommendSignal: new signals.Signal(),
 		getService:function() {
-			return data.main.service;
+			return data.service;
 		},
 		getData:function() {
 			return data;
+		},
+		getMain:function() {
+			return data.main;
+		},
+		getComments:function() {
+			return data.comments.data;
+		},
+		getRecommends:function() {
+			return data.recommends;
+		},
+		getPlestValue:function() {
+			return data.plestValue;
 		},
 		togglePlestlike:function() {
 			var that = this;

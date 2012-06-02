@@ -1,4 +1,7 @@
 //app.js
+if(!console){
+	console = {};
+}
 $(function() {
 	var eb = new signals.Signal();
 	var lf = new LoadFeedCommand();

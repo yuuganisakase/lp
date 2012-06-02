@@ -11,10 +11,22 @@ var ItemModel = function(_data) {
 		dislikeSignal: new signals.Signal(),
 		recommendSignal: new signals.Signal(),
 		getService:function() {
-			return data.main.service;
+			return data.service;
 		},
 		getData:function() {
 			return data;
+		},
+		getMain:function() {
+			return data.main;
+		},
+		getComments:function() {
+			return data.comments.data;
+		},
+		getRecommends:function() {
+			return data.recommends;
+		},
+		getPlestValue:function() {
+			return data.plestValue;
 		},
 		togglePlestlike:function() {
 			var that = this;
@@ -164,6 +176,14 @@ var Color = function() {
 
     };
   };
+var timeConvert = function(material) {
+	var temp = material.split("T");
+	var temp2 = temp[0].split("-");
+	var temp3 = temp[1].split("+");
+
+	
+	return temp2[1] + "/" + temp2[2] + " " + temp3[0];
+};
 //LoadTemplateCommand.js
 var LoadTemplateCommand = function() {
 
@@ -208,7 +228,7 @@ var LoadFeedCommand = function() {
 					dataType: 'json',
 					cache: false,
 					success: function(data) {
-						console.log("load template");
+						console.log("load feed");
 						that.completeSignal.dispatch(data);
 					}
 				});
@@ -240,7 +260,6 @@ var ItemView = function(_model, _eb) {
 		addEvent:function(tar) {
 			var time = 650;
 			model.dislikeSignal.add(function() {
-				console.log("dislike");
 				tar.stop().animate({height: 0,opacity:0,marginBottom:0},
 					{
 						duration:time,
@@ -251,7 +270,7 @@ var ItemView = function(_model, _eb) {
 			
 			var remove = function() {
 				tar.remove();
-			}
+			};
 		}
 	};
 };
@@ -260,6 +279,9 @@ var ItemView = function(_model, _eb) {
 var MainItemView = function(_model) {
 
 	var model = _model;
+	var main = model.getMain();
+	var config = window.config;
+	var service = model.getService();
 	var template;
 	var color = new Color();
 	return{
@@ -268,13 +290,11 @@ var MainItemView = function(_model) {
 		},
 		render: function() {
 			var that = this;
-
-			var main = model.getData().main;
-			var config = window.config;
+			
 			var snsI;
 			var snsA;
-			var s = main.service;
-			if(s === 0){
+			
+			if(service === 0){
 				snsI = "img/fbMainIcon.png";
 				snsA = config.FBaction;
 			}else if(s === 1){
@@ -285,12 +305,12 @@ var MainItemView = function(_model) {
 			
 			var tar = ich.mainItem({
 				snsImg : snsI,
-				snsIcon : main.snsIcon,
+				snsIcon : main.icon,
 				name : main.name,
-				time : main.time,
-				postTexts: main.postTexts,
-				postImg: main.postImg,
-				plestValue: main.plestValue,
+				time : timeConvert(main.time),
+				postTexts: main.text,
+				postImg: main.picture,
+				plestValue: model.getPlestValue(),
 				snsAction1: snsA.action1,
 				snsAction2: snsA.action2,
 				snsAction3: snsA.action3
@@ -298,7 +318,7 @@ var MainItemView = function(_model) {
 			
 			template = tar;
 
-			that.changePlestSize(main.plestValue);
+			that.changePlestSize(model.getPlestValue());
 
 			var tarObj = $(tar);
 			var h = tarObj.appendTo($("#container"));
@@ -399,7 +419,10 @@ var MainItemView = function(_model) {
 //RecommendItemView.js
 var RecommendItemView = function(_model) {
 		var model = _model;
-		var comments = model.getData().comment;
+		var comments = model.getComments();
+		var recommends = model.getRecommends();
+		var service = model.getService();
+		var data = model.getData();
 		var commentBox;
 		var inputStr = "<input class='commentInput' type='text' name='example1' >";
 		var config = window.config;
@@ -412,12 +435,7 @@ var RecommendItemView = function(_model) {
 			},
 			render: function() {
 				var that = this;
-				var data = model.getData();
-				var comments = data.comment;
-				var recommends = data.recommends;
-
-
-				var service = model.getService();
+								
 				var actionedMessage;
 				if (service === 0) {
 					actionedMessage = config.FBaction.actionedMessage;
@@ -425,7 +443,7 @@ var RecommendItemView = function(_model) {
 					actionedMessage = config.TWaction.actionedMessage;
 				}
 				template = ich.recommendItem({
-					actionedMessage: recommends.num + actionedMessage
+					actionedMessage: recommends.count + actionedMessage
 				})[0];
 
 				commentBox = $(template).find(".commentBoxWrapperInner");
@@ -437,7 +455,7 @@ var RecommendItemView = function(_model) {
 				var actionedIconBox = $(template).find(".actionedIcons");
 				for (var j = 0; j < 6; j++) {
 					var r = recommends.data[j];
-					var img = "<img class='recIconImg' src=" + r.img + "></img>";
+					var img = "<img class='recIconImg' src=" + r.icon + "></img>";
 					actionedIconBox.append(img);
 				}
 				that.addEvent(template);
@@ -483,7 +501,6 @@ var RecommendItemView = function(_model) {
 					}
 					num -= 1;
 				}
-				console.log(hh);
 				return {
 					"height": hh,
 					"bottom": margin
@@ -493,31 +510,30 @@ var RecommendItemView = function(_model) {
 			createComment: function(_num, parent) {
 				var that = this;
 				var num;
-				var data = model.getData();
 				if (_num === 0) {
-					num = data.comment.length;
+					num = comments.length;
 				} else {
 					num = _num;
 				}
 
 				for (var i = 0; i < num; i++) {
-					var c = data.comment[i];
+					var c = comments[i];
 					if (i === (comments.length - 1)) {
 						c.commentMore = config.commentMore1 + comments.length + config.commentMore2;
 					} else {
 						c.commentMore = "";
 					}
-					if (data.main.service === 0) {
+					if (service === 0) {
 						c.commentAction = ""; //config.FBaction.action1;
 					} else {
 						c.commentAction = "";
 					}
 					var cmp = ich.commentPartial({
 						url: c.url,
-						snsIcon: c.snsIcon,
-						commentName: c.commentName,
-						commentTime: c.commentTime,
-						commentContents: c.commentContents,
+						snsIcon: c.icon,
+						commentName: c.name,
+						commentTime: timeConvert(c.time),
+						commentContents: c.message,
 						commentMore: c.commentMore,
 						commentAction: c.commentAction
 					});
@@ -615,7 +631,6 @@ var RecommendItemView = function(_model) {
 					console.log("comment click");
 					console.log(e);
 					if ($(e.target).hasClass("commentInput")) {
-						console.log("comment input clicked");
 						return;
 					}else if(model.getRecommendAnimationFlag() === true){
 						return;
@@ -655,6 +670,9 @@ var HeaderView = function() {
 	};
 }
 //app.js
+if(!console){
+	console = {};
+}
 $(function() {
 	var eb = new signals.Signal();
 	var lf = new LoadFeedCommand();

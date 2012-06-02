@@ -3,9 +3,10 @@
 var ItemView = function(_model, _eb) {
 	var model = _model;
 	var eb = _eb;
-
-	var rv = new RecommendItemView(model);
 	var mv = new MainItemView(model);
+	
+	var rv = new RecommendItemView(model);
+	
 	return {
 		init: function() {
 
@@ -21,7 +22,6 @@ var ItemView = function(_model, _eb) {
 		addEvent:function(tar) {
 			var time = 650;
 			model.dislikeSignal.add(function() {
-				console.log("dislike");
 				tar.stop().animate({height: 0,opacity:0,marginBottom:0},
 					{
 						duration:time,
@@ -32,7 +32,7 @@ var ItemView = function(_model, _eb) {
 			
 			var remove = function() {
 				tar.remove();
-			}
+			};
 		}
 	};
 };

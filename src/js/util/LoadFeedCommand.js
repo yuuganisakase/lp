@@ -10,7 +10,7 @@ var LoadFeedCommand = function() {
 					dataType: 'json',
 					cache: false,
 					success: function(data) {
-						console.log("load template");
+						console.log("load feed");
 						that.completeSignal.dispatch(data);
 					}
 				});

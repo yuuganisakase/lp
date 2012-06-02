@@ -49,6 +49,7 @@ body {
 #container #feed {
   height: auto;
   position: relative;
+  margin-top: 70px;
 }
 #container #plestLine {
   margin-left: 24px;

@@ -1,406 +1,122 @@
 {
     "list": [
         {
-        	"read": false,
-        	"main":{
-        		"plestValue": 223,
-            	"service": 0,
-            	"snsIcon": "debug/dummyIcon5.png",
-            	"time": "123455",
-            	"name": "nagaoka",
-            	"postImg": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
-            	"postTexts": "hello hello"
-        	},
-            "comment": [
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "5ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-       			{
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "4ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png",
-                    "url": "https://www.facebook.com/toukubo"
-               	},
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "  comment comment comment comment comment ",
-                    "commentName": "aikou",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png",
-                    "url": "https://www.facebook.com/toukubo"
-                },
-                {
-                    "commentContents": "comment comment comment comment ",
-                    "commentName": "oka",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png",
-                    "url": "https://www.facebook.com/toukubo"
+            "read": false, 
+            "itemId": "abc123456",
+            "itemUrl": "https://www.facebook.com/tatsuya.oka.39/timeline/story?ut=76&wstart=1335855600&wend=1338533999&hash=-539148947165929752&pagefilter=3",            
+            "plestValue": 123,
+            "private": false,
+            "service": 0,
+            "comments": {
+                "count":5,
+                "data":[
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "oka tatsuya",
+                        "time": "2012-05-24T07:30:57+0900",
+                        "icon": "debug/dummyIcon1.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment ",
+                        "name": "four",
+                        "time": "2012-05-25T06:30:57+0900",
+                        "icon": "debug/dummyIcon2.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "三人目",
+                        "time": "2012-05-26T22:30:57+0900",
+                        "icon": "debug/dummyIcon3.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "oka",
+                        "time": "2012-05-27T20:30:57+0900",
+                        "icon": "debug/dummyIcon4.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    },
+                    {
+                        "message": "comment comment comment comment comment comment comment comment comment ",
+                        "name": "aikou",
+                        "time": "2012-05-28T18:30:57+0900",
+                        "icon": "debug/dummyIcon5.png",
+                        "userId":14230524,
+                        "url": "https://www.facebook.com/toukubo"
+                    }
+                ]
+            },
+            "main": {
+                "name": "長岡まさひろ",
+                "icon": "debug/dummyIcon5.png",
+                "picture": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
+                "text": "こんにちは、hello hello",
+                "time": "2012-05-28T18:10:57+0900",
+
+                "actions": [
+                    {
+                      "name": "Comment", 
+                      "link": "https://www.facebook.com/100001916831839/posts/341146872625871"
+                    }, 
+                    {
+                      "name": "Like", 
+                      "link": "https://www.facebook.com/100001916831839/posts/341146872625871"
+                    }
+                ],
+
+                "actioned": {
+                    "liked":false
                 }
-            ],
-            "recommends":{
-            	"num":58,
-            	"data":[
-	                {
-	                    "img": "debug/dummyIcon4.png",
-	                    "name": "toukubo"
-	                },
-	                {
-	                    "img": "debug/dummyIcon5.png",
-	                    "name": "namae1"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-						"img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                }
-            	]
-        	}
-        },
-        {
-        	"read": false,
-        	"main":{
-        		"plestValue": 160,
-            	"service": 1,
-            	"snsIcon": "debug/dummyIcon4.png",
-            	"time": "01:23",
-            	"name": "nagaoka",
-            	"postImg": "",
-            	"postTexts": "プレストなう"
-        	},
-            "comment": [
-                {
-                    "commentContents": "コメントです。 ",
-                    "commentName": "namae1",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon3.png"
-                },
-                {
-                    "commentContents": "PLESTはすばらしい ",
-                    "commentName": "namae2",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon5.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
-                }
-            ],
-            "recommends":{
-            	"num":3,
-            	"data":[
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                }
-            	]
-        	}
-        },
-        {
-        	"read": false,
-        	"main":{
-        		"plestValue": 120,
-            	"service": 0,
-            	"snsIcon": "debug/dummyIcon5.png",
-            	"time": "123455",
-            	"name": "nagaoka",
-            	"postImg": "",
-            	"postTexts": "plest now now now"
-        	},
-            "comment": [
-                {
-                    "commentContents": "comment comment commentcommentcommentcommentcommentcommentcommentcommentcommentcommentcommentcomment comment comment comment comment comment comment ",
-                    "commentName": "aikou",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment ",
-                    "commentName": "oka",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
-                }
-            ],
-            "recommends":{
-            	"num":58,
-            	"data":[
-	                {
-	                    "img": "debug/dummyIcon4.png",
-	                    "name": "toukubo"
-	                },
-	                {
-	                    "img": "debug/dummyIcon5.png",
-	                    "name": "namae1"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-						"img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                }
-            	]
-        	}
-        },
-                {
-        	"read": false,
-        	"main":{
-        		"plestValue": 80,
-            	"service": 0,
-            	"snsIcon": "debug/dummyIcon5.png",
-            	"time": "123455",
-            	"name": "nagaoka",
-            	"postImg": "",
-            	"postTexts": "あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
-        	},
-            "comment": [
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "aikou",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment ",
-                    "commentName": "oka",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
-                }
-            ],
-            "recommends":{
-            	"num":58,
-            	"data":[
-	                {
-	                    "img": "debug/dummyIcon4.png",
-	                    "name": "toukubo"
-	                },
-	                {
-	                    "img": "debug/dummyIcon5.png",
-	                    "name": "namae1"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-						"img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                }
-            	]
-        	}
-        },
-        {
-        	"read": false,
-        	"main":{
-        		"plestValue": 40,
-            	"service": 0,
-            	"snsIcon": "debug/dummyIcon5.png",
-            	"time": "123455",
-            	"name": "nagaoka",
-            	"postImg": "https://fbcdn-photos-a.akamaihd.net/hphotos-ak-ash3/523002_440746309268993_100000008823716_1703408_2008404199_s.jpg",
-            	"postTexts": "あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ"
-        	},
-            "comment": [
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "aikou",
-                    "commentTime": "12:36",
-                    "snsIcon": "debug/dummyIcon1.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment ",
-                    "commentName": "oka",
-                    "commentTime": "12:35",
-                    "snsIcon": "debug/dummyIcon2.png"
-                },
-                {
-                    "commentContents": "comment comment comment comment comment comment comment comment comment ",
-                    "commentName": "3ninme",
-                    "commentTime": "12:34",
-                    "snsIcon": "debug/dummyIcon3.png"
-                }
-            ],
-            "recommends":{
-            	"num":58,
-            	"data":[
-	                {
-	                    "img": "debug/dummyIcon4.png",
-	                    "name": "toukubo"
-	                },
-	                {
-	                    "img": "debug/dummyIcon5.png",
-	                    "name": "namae1"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-	                    "img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                },
-	                {
-						"img": "debug/dummyIcon1.png",
-	                    "name": "namae 2"
-	                },
-	                {
-	                    "img": "debug/dummyIcon2.png",
-	                    "name": "namae 3"
-	                },
-	                {
-	                    "img": "debug/dummyIcon3.png",
-	                    "name": "namae 4"
-	                }
-            	]
-        	}
+
+            },
+
+            "recommends": {
+                "count": 58, 
+                "data": [
+                    {
+                        "icon": "debug/dummyIcon4.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    },
+                    {
+                        "icon": "debug/dummyIcon5.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    },
+                    {
+                        "icon": "debug/dummyIcon1.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    },
+                    {
+                        "icon": "debug/dummyIcon2.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    },
+                    {
+                        "icon": "debug/dummyIcon3.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    },
+                    {
+                        "icon": "debug/dummyIcon4.png",
+                        "name": "toukubo",
+                        "url": "https://www.facebook.com/toukubo",
+                        "userId": 123456
+                    }
+                ]
+            }
         }
     ]
 }

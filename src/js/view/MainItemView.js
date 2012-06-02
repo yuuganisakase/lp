@@ -3,6 +3,9 @@
 var MainItemView = function(_model) {
 
 	var model = _model;
+	var main = model.getMain();
+	var config = window.config;
+	var service = model.getService();
 	var template;
 	var color = new Color();
 	return{
@@ -11,13 +14,11 @@ var MainItemView = function(_model) {
 		},
 		render: function() {
 			var that = this;
-
-			var main = model.getData().main;
-			var config = window.config;
+			
 			var snsI;
 			var snsA;
-			var s = main.service;
-			if(s === 0){
+			
+			if(service === 0){
 				snsI = "img/fbMainIcon.png";
 				snsA = config.FBaction;
 			}else if(s === 1){
@@ -28,12 +29,12 @@ var MainItemView = function(_model) {
 			
 			var tar = ich.mainItem({
 				snsImg : snsI,
-				snsIcon : main.snsIcon,
+				snsIcon : main.icon,
 				name : main.name,
-				time : main.time,
-				postTexts: main.postTexts,
-				postImg: main.postImg,
-				plestValue: main.plestValue,
+				time : timeConvert(main.time),
+				postTexts: main.text,
+				postImg: main.picture,
+				plestValue: model.getPlestValue(),
 				snsAction1: snsA.action1,
 				snsAction2: snsA.action2,
 				snsAction3: snsA.action3
@@ -41,7 +42,7 @@ var MainItemView = function(_model) {
 			
 			template = tar;
 
-			that.changePlestSize(main.plestValue);
+			that.changePlestSize(model.getPlestValue());
 
 			var tarObj = $(tar);
 			var h = tarObj.appendTo($("#container"));
