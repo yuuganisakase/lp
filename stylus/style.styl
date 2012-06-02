@@ -19,6 +19,9 @@
 shadowMix(col)
   -webkit-box-shadow 1px 1px 1px col, -1px -1px 1px col
   box-shadow 1px 1px 1px col, -1px -1px 1px col
+shadowMixInset(col)
+  -webkit-box-shadow inset 0px 1px 1px 0 col,inset -1px -1px 1px 0 col
+  box-shadow inset 0px 1px 1px 0 col,inset -1px -1px 1px 0 col
 
 mainColor = rgb(0,164,159)
 timeColor = rgb(204,204,204)
@@ -70,16 +73,23 @@ body
   background-image url('../img/backgroundTile.png')
   background-repeat repeat
   font-family 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック','MS PGothic',sans-serif;
+#sideHeader
+  position fixed
+  right 0
+  top 80px
+  cursor pointer
 #header
   height 67px
   width 100%
-  position relative
+  position fixed
+  z-index 100
   #logo
     left 2px
     top 17px
     position absolute
   #setting
-    right 0
+    left 858px
+    top 0
     position absolute
 #message
   margin-bottom 17px
@@ -122,6 +132,7 @@ div.mainItem
       shadowMix mainColor
     .plestNumber
       position absolute
+      font-weight bold
       left 12px
       top 19px
       color #ffffff
@@ -214,6 +225,7 @@ div.mainItem
   borderradius 4px
   background-color recBackColor
   font-size elevensize
+  shadowMixInset(rgba(189,189,189,0.3))
   .commentBoxWrapper
     margin-top 10px
     overflow hidden

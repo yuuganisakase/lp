@@ -622,7 +622,7 @@ var RecommendItemView = function(_model) {
 					}
 
 					if (model.getCommentOpen() === true) {
-						model.setCommentOpen(false);
+						//model.setCommentOpen(false);
 					} else {
 						model.setCommentOpen(true);
 					}

@@ -13,10 +13,17 @@ body {
   background-repeat: repeat;
   font-family: 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
+#sideHeader {
+  position: fixed;
+  right: 0;
+  top: 80px;
+  cursor: pointer;
+}
 #header {
   height: 67px;
   width: 100%;
-  position: relative;
+  position: fixed;
+  z-index: 100;
 }
 #header #logo {
   left: 2px;
@@ -24,7 +31,8 @@ body {
   position: absolute;
 }
 #header #setting {
-  right: 0;
+  left: 858px;
+  top: 0;
   position: absolute;
 }
 #message {
@@ -77,6 +85,7 @@ div.mainItem .plestBack {
 }
 div.mainItem .plestNumber {
   position: absolute;
+  font-weight: bold;
   left: 12px;
   top: 19px;
   color: #fff;
@@ -189,6 +198,8 @@ div.mainItem .mainItemBox .actionedBox .snsActionBox {
   border-radius: 4px;
   background-color: rgba(128,128,128,0.25);
   font-size: 85%;
+  -webkit-box-shadow: inset 0px 1px 1px 0 rgba(189,189,189,0.3), inset -1px -1px 1px 0 rgba(189,189,189,0.3);
+  box-shadow: inset 0px 1px 1px 0 rgba(189,189,189,0.3), inset -1px -1px 1px 0 rgba(189,189,189,0.3);
 }
 .recommendItem .commentBoxWrapper {
   margin-top: 10px;
