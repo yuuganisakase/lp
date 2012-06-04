@@ -5,6 +5,7 @@ var ItemModel = function(_data) {
 	var recommendAnimationFlag = false;
 	var isCommentOpen = false;
 	var isActionedOpen = false;
+	var likeFlag;
 	return{
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
@@ -32,6 +33,10 @@ var ItemModel = function(_data) {
 			var that = this;
 			that.likeFlag = !that.likeFlag;
 			that.likeSignal.dispatch(that.likeFlag);
+		},
+		getPlestLike:function() {
+			var that = this;
+			return that.likeFlag;
 		},
 		togglePlestDislike:function() {
 			this.dislikeSignal.dispatch();

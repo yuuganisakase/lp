@@ -28,13 +28,12 @@ $(function() {
 			}
 		});
 
-
 	});
 
 	var onLoadFeedComplete = function(data) {
 		var hv = new HeaderView();
 		$("body").prepend(hv.render());
-		
+
 		console.log(data);
 		loadingFlag = false;
 		

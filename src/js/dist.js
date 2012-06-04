@@ -5,6 +5,7 @@ var ItemModel = function(_data) {
 	var recommendAnimationFlag = false;
 	var isCommentOpen = false;
 	var isActionedOpen = false;
+	var likeFlag;
 	return{
 		likeFlag:false,
 		likeSignal: new signals.Signal(),
@@ -32,6 +33,10 @@ var ItemModel = function(_data) {
 			var that = this;
 			that.likeFlag = !that.likeFlag;
 			that.likeSignal.dispatch(that.likeFlag);
+		},
+		getPlestLike:function() {
+			var that = this;
+			return that.likeFlag;
 		},
 		togglePlestDislike:function() {
 			this.dislikeSignal.dispatch();
@@ -459,10 +464,26 @@ var MainItemView = function(_model) {
 			var target = $(tar);
 
 			var time = 140;
+			var ac = target.find(".snsActionBox").add(target.find(".plestDislike")).add(target.find(".plestLike1")).add(target.find(".plestLike2"));
 			target.mouseenter(function() {
-				target.find(".actionedBox").stop().animate( { opacity: "1"}, { duration: time, easing: 'easeOutQuad'} );
+				var ttt;
+				if(model.getPlestLike() === true){
+					ttt = ac.not(target.find(".plestLike2")).not(target.find(".plestLike1"));
+				}else{
+					ttt = ac.not(target.find(".plestLike2"));
+					target.find(".plestLike2").animate({"opacity":"0"},0);
+				}
+				ttt.stop().animate( { opacity: "1"}, { duration: time, easing: 'easeOutQuad'} );
 			}).mouseleave(function() {
-				target.find(".actionedBox").stop().animate( { opacity: "0"}, { duration: time*1.2, easing: 'easeOutQuad'} );
+				var ttt;
+				if(model.getPlestLike() === true){
+					ttt = ac.not(target.find(".plestLike2")).not(target.find(".plestLike1"));
+				}else{
+					ttt = ac.not(target.find(".plestLike2"));
+					target.find(".plestLike2").animate({"opacity":"0"},0);
+				}
+
+				ttt.stop().animate( { opacity: "0"}, { duration: time*1.2, easing: 'easeOutQuad'} );
 			});
 			target.find(".actionedBox").trigger("mouseleave");
 
@@ -795,13 +816,12 @@ $(function() {
 			}
 		});
 
-
 	});
 
 	var onLoadFeedComplete = function(data) {
 		var hv = new HeaderView();
 		$("body").prepend(hv.render());
-		
+
 		console.log(data);
 		loadingFlag = false;
 		

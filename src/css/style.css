@@ -294,6 +294,7 @@ hr.commentLine {
   position: absolute;
   top: 0;
   right: 0;
+  cursor: pointer;
 }
 hr.recommendLine {
   width: 100%;
