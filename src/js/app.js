@@ -9,7 +9,7 @@ $(function() {
 	var startFlag = false;
 	var loadingFlag = false;
 
-	lc.execute(["recommendItem", "commentPartial", "mainItem"]);
+	lc.execute(["recommendItem", "commentPartial", "mainItem","mainItemInner"]);
 	lc.completeSignal.add(function() {
 		console.log("load template end");
 
@@ -25,7 +25,7 @@ $(function() {
 				lf.completeSignal.add(onLoadFeedComplete);
 
 				var hv = new HeaderView();
-				$("#container").prepend(hv.render());
+				$("body").prepend(hv.render());
 			}
 		});
 
@@ -35,6 +35,15 @@ $(function() {
 	var onLoadFeedComplete = function(data) {
 		console.log(data);
 		loadingFlag = false;
+		
+		$(window).bind("resize", function() {
+			var left = $("#container").offset().left;
+			var wid = $("#container").width();
+			var right = left + wid - 57 - 8;
+			$("#logo").css("left",left + "px");
+			$("#setting").css("left", right + "px");
+		}).trigger("resize");
+
 		if(startFlag === false){
 			startFlag = true;
 			setInterval(function() {

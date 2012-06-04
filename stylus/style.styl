@@ -79,18 +79,22 @@ body
   top 80px
   cursor pointer
 #header
-  height 67px
+  height 50px
   width 100%
   position fixed
+  background-color rgb(51,51,51)
   z-index 100
-  #logo
-    left 2px
-    top 17px
-    position absolute
-  #setting
-    left 858px
-    top 0
-    position absolute
+  box-shadow 1px 1px 1px col
+  -webkit-box-shadow 0px 1px 3px rgb(51,51,51,0.1)
+#logo
+  left 2px
+  top 8px
+  position absolute
+#setting
+  left 858px
+  top 16px
+  position absolute
+  cursor pointer
 #message
   margin-bottom 17px
 
@@ -155,6 +159,7 @@ div.mainItem
       float left
       margin-top 14px
       margin-left 16px
+      width 400px
       .name
         color mainColor
         fontW6()
@@ -164,10 +169,10 @@ div.mainItem
         font-size twelvesize
       .postTexts
         margin-top 12px
-        width 410px
+        width 400px
         margin-bottom 12px
+        line-height 1.4em
       .posImg
-//        margin-top 12px
         margin-bottom 10px
     .actionedBox
       position relative
@@ -190,7 +195,7 @@ div.mainItem
           left 0
         .plestDislike
           cursor pointer
-          margin-left 20px
+          margin-left 24px
       .snsActionBox
         position absolute
         top 0
@@ -198,6 +203,28 @@ div.mainItem
         font-size elevensize
         color mainColor
 
+.mainItemQuote
+  .innerImg
+    max-width 100px
+    max-height 100px
+    float left
+  .innerTexts
+    width 282px
+    float left
+    margin-left 15px
+  .innerName
+    color mainColor
+    font-size twelvesize
+    font-weight bold
+  .innerCaption
+    color #cccccc
+    font-size elevensize
+    margin-top 5px
+  .innerDescription
+    font-size elevensize
+    margin-top 10px
+    color #000000
+    line-height 1.4em
 .recommendItem:after, .recommendItem:before {
   right: 100%;
   border: solid transparent;
@@ -228,19 +255,19 @@ div.mainItem
   background-color recBackColor
   font-size elevensize
   shadowMixInset(rgba(189,189,189,0.3))
-  .commentBoxWrapper
-    margin-top 10px
-    overflow hidden
-    position relative
-    .commentImgIcon
-      margin-left 8px
-      float left
-    .commentBoxWrapperInner
-      position absolute
-      bottom 0
-      .commentInput
-        margin-left 31px
-        width 313px
+.commentBoxWrapper
+  margin-top 10px
+  overflow hidden
+  position relative
+  .commentImgIcon
+    margin-left 8px
+    float left
+.commentBoxWrapperInner
+  position absolute
+  bottom 0
+  .commentInput
+    margin-left 31px
+    width 313px
 hr.commentLine
   width 322px
   margin-right -11px
@@ -257,6 +284,7 @@ hr.commentLine
     margin-left 40px
     width 274px
     word-break break-all
+    line-height 1.4em
   .commentContentsSpan
     margin-left 4px
   .commentMisc

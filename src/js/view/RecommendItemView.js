@@ -36,7 +36,13 @@ var RecommendItemView = function(_model) {
 								.find(".actionedBox").css("margin-top","10px");
 				}else{
 					that.createComment(0, commentBox);
-					var hh = that.setDisplayCommentNum(2, commentBox).height;
+					var displayNum = 2;
+					if(comments.length === 2){
+						displayNum = 1;
+					}else if(comments.length === 1){
+						displayNum = 0;
+					}
+					var hh = that.setDisplayCommentNum(displayNum, commentBox).height;
 					commentBox.parent().css("height", hh + "px");
 				}
 

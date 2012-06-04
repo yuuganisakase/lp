@@ -298,7 +298,7 @@ var MainItemView = function(_model) {
 			if(service === 0){
 				snsI = "img/fbMainIcon.png";
 				snsA = config.FBaction;
-			}else if(s === 1){
+			}else if(service === 1){
 				snsI = "img/twMainIcon.png";
 				snsA = config.TWaction;
 			}
@@ -317,13 +317,18 @@ var MainItemView = function(_model) {
 			})[0];
 			
 			template = tar;
+
+			var contents = $(template).find(".contents");
+
 			if(main.picture){
-				$(template).find(".contents").append("<img class='posImg' src=" + main.picture + " />");
+				contents.append("<img class='posImg' src=" + main.picture + " />");
 			}else if(main.place){
 				var place = main.place;
+				var location = place.location;
 				var lat = place.location.latitude;
 				var lon = place.location.longitude;
-				var contents = $(template).find(".contents");
+				var address = location.state + " " + location.city + " " +location.street;
+
 				contents.css({
 					//"position":"absolute",
 					"width":"403px",
@@ -342,20 +347,65 @@ var MainItemView = function(_model) {
 						showScalebar: false,
 						useInertia: false,
 						center: new Microsoft.Maps.Location(lat, lon),
-						zoom: 15,
+						zoom: 14,
 						width: 403,
 						height:122
 					});
+				var infoboxOptions = {offset:new Microsoft.Maps.Point(-170,-25) ,showPointer:true,showCloseButton: false,width :352, height :62};
+				var defaultInfobox = new Microsoft.Maps.Infobox(map.getCenter(), infoboxOptions );
+				map.entities.push(defaultInfobox);
+				var col1 = 'rgb(59,90,152)';
+				var col2 = 'rgb(135,135,135)';
+				var html1 = '<div id="infoboxText" style="background-color:White; min-height:62px;width:352px;">';
+				var html2 = '<span id="infoboxTitle" style="position:absolute; top:10px; left:10px; width:220px;">' + place.name + '</span>';
+				var html3 = '<a id="infoboxDescription" style="position:absolute; top:30px; left:10px; width:220px;">' + address + '</a><img id="mapImg" src="img/mapIcon.png"></img></div>';
+				var h2 = $(html2).css("color","#ff0000");
+				console.log(h2[0]);
+				var h22 = "" + h2[0];
+				defaultInfobox.setHtmlContent(html1 + html2 + html3);
+				setTimeout(function() {contents.find("#infoboxTitle").css({
+						"color":col1,
+						"position":"absolute",
+						"top":"20px",
+						"left":"70px",
+						"font-size":"12px",
+						"font-weight":"bold"
+					}).end().find("#infoboxDescription").css({
+						"color":col2,
+						"position":"absolute",
+						"top":"35px",
+						"left":"70px",
+						"font-size":"12px"
+					}).end().find("#mapImg").css({
+						"position":"absolute",
+						"top":"7px",
+						"left":"7px"
+					}).end().find("#infoboxText").css({
+						"border": "1px solid #8c8c8c"
+					}).end().find(".CopyrightContainer").css({
+						"margin-bottom":"-8px"
+					});
+				}, 590);
+			}else if(main.inner){
+				var inner = ich.mainItemInner({
+					"innerName": main.inner.name,
+					"innerImg": main.inner.picture,
+					"innerCaption": main.inner.caption,
+					"innerDescription": main.inner.description,
+					"link": main.inner.link
+				});
+				contents.append(inner);
 			}
 			
 			that.changePlestSize(model.getPlestValue());
 
 			var tarObj = $(template);
 			var h = tarObj.appendTo($("#container"));
-			alert(h.height());
 			if(h.height() < 110){
 				tar = that.addCssForActionedBox(tar, 0);
 			}else if(main.place){
+				tar = that.addCssForActionedBox(tar, 10);
+			}else if(main.inner){
 				tar = that.addCssForActionedBox(tar, 10);
 			}
 			tarObj.remove();
@@ -487,7 +537,13 @@ var RecommendItemView = function(_model) {
 								.find(".actionedBox").css("margin-top","10px");
 				}else{
 					that.createComment(0, commentBox);
-					var hh = that.setDisplayCommentNum(2, commentBox).height;
+					var displayNum = 2;
+					if(comments.length === 2){
+						displayNum = 1;
+					}else if(comments.length === 1){
+						displayNum = 0;
+					}
+					var hh = that.setDisplayCommentNum(displayNum, commentBox).height;
 					commentBox.parent().css("height", hh + "px");
 				}
 
@@ -720,7 +776,7 @@ $(function() {
 	var startFlag = false;
 	var loadingFlag = false;
 
-	lc.execute(["recommendItem", "commentPartial", "mainItem"]);
+	lc.execute(["recommendItem", "commentPartial", "mainItem","mainItemInner"]);
 	lc.completeSignal.add(function() {
 		console.log("load template end");
 
@@ -736,7 +792,7 @@ $(function() {
 				lf.completeSignal.add(onLoadFeedComplete);
 
 				var hv = new HeaderView();
-				$("#container").prepend(hv.render());
+				$("body").prepend(hv.render());
 			}
 		});
 
@@ -746,6 +802,15 @@ $(function() {
 	var onLoadFeedComplete = function(data) {
 		console.log(data);
 		loadingFlag = false;
+		
+		$(window).bind("resize", function() {
+			var left = $("#container").offset().left;
+			var wid = $("#container").width();
+			var right = left + wid - 57 - 8;
+			$("#logo").css("left",left + "px");
+			$("#setting").css("left", right + "px");
+		}).trigger("resize");
+
 		if(startFlag === false){
 			startFlag = true;
 			setInterval(function() {

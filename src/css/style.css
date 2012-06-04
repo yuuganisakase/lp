@@ -20,20 +20,24 @@ body {
   cursor: pointer;
 }
 #header {
-  height: 67px;
+  height: 50px;
   width: 100%;
   position: fixed;
+  background-color: #333;
   z-index: 100;
+  box-shadow: 1px 1px 1px col;
+  -webkit-box-shadow: 0px 1px 3px #333;
 }
-#header #logo {
+#logo {
   left: 2px;
-  top: 17px;
+  top: 8px;
   position: absolute;
 }
-#header #setting {
+#setting {
   left: 858px;
-  top: 0;
+  top: 16px;
   position: absolute;
+  cursor: pointer;
 }
 #message {
   margin-bottom: 17px;
@@ -116,6 +120,7 @@ div.mainItem .mainItemBox .mainItemInner {
   float: left;
   margin-top: 14px;
   margin-left: 16px;
+  width: 400px;
 }
 div.mainItem .mainItemBox .mainItemInner .name {
   color: #00a49f;
@@ -128,11 +133,11 @@ div.mainItem .mainItemBox .mainItemInner .time {
 }
 div.mainItem .mainItemBox .mainItemInner .postTexts {
   margin-top: 12px;
-  width: 410px;
+  width: 400px;
   margin-bottom: 12px;
+  line-height: 1.4em;
 }
 div.mainItem .mainItemBox .mainItemInner .posImg {
-  margin-top: 12px;
   margin-bottom: 10px;
 }
 div.mainItem .mainItemBox .actionedBox {
@@ -161,7 +166,7 @@ div.mainItem .mainItemBox .actionedBox .plestActionBox .plestLike2 {
 }
 div.mainItem .mainItemBox .actionedBox .plestActionBox .plestDislike {
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 24px;
 }
 div.mainItem .mainItemBox .actionedBox .snsActionBox {
   position: absolute;
@@ -169,6 +174,32 @@ div.mainItem .mainItemBox .actionedBox .snsActionBox {
   right: 10px;
   font-size: 85%;
   color: #00a49f;
+}
+.mainItemQuote .innerImg {
+  max-width: 100px;
+  max-height: 100px;
+  float: left;
+}
+.mainItemQuote .innerTexts {
+  width: 282px;
+  float: left;
+  margin-left: 15px;
+}
+.mainItemQuote .innerName {
+  color: #00a49f;
+  font-size: 93%;
+  font-weight: bold;
+}
+.mainItemQuote .innerCaption {
+  color: #ccc;
+  font-size: 85%;
+  margin-top: 5px;
+}
+.mainItemQuote .innerDescription {
+  font-size: 85%;
+  margin-top: 10px;
+  color: #000;
+  line-height: 1.4em;
 }
 .recommendItem:after,
 .recommendItem:before {
@@ -203,20 +234,20 @@ div.mainItem .mainItemBox .actionedBox .snsActionBox {
   -webkit-box-shadow: inset 0px 1px 1px 0 rgba(189,189,189,0.3), inset -1px -1px 1px 0 rgba(189,189,189,0.3);
   box-shadow: inset 0px 1px 1px 0 rgba(189,189,189,0.3), inset -1px -1px 1px 0 rgba(189,189,189,0.3);
 }
-.recommendItem .commentBoxWrapper {
+.commentBoxWrapper {
   margin-top: 10px;
   overflow: hidden;
   position: relative;
 }
-.recommendItem .commentBoxWrapper .commentImgIcon {
+.commentBoxWrapper .commentImgIcon {
   margin-left: 8px;
   float: left;
 }
-.recommendItem .commentBoxWrapper .commentBoxWrapperInner {
+.commentBoxWrapperInner {
   position: absolute;
   bottom: 0;
 }
-.recommendItem .commentBoxWrapper .commentBoxWrapperInner .commentInput {
+.commentBoxWrapperInner .commentInput {
   margin-left: 31px;
   width: 313px;
 }
@@ -240,6 +271,7 @@ hr.commentLine {
   margin-left: 40px;
   width: 274px;
   word-break: break-all;
+  line-height: 1.4em;
 }
 .commentBox .commentContentsSpan {
   margin-left: 4px;
