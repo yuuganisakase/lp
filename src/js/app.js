@@ -24,8 +24,7 @@ $(function() {
 				lf.execute(1);
 				lf.completeSignal.add(onLoadFeedComplete);
 
-				var hv = new HeaderView();
-				$("body").prepend(hv.render());
+
 			}
 		});
 
@@ -33,6 +32,9 @@ $(function() {
 	});
 
 	var onLoadFeedComplete = function(data) {
+		var hv = new HeaderView();
+		$("body").prepend(hv.render());
+		
 		console.log(data);
 		loadingFlag = false;
 		
